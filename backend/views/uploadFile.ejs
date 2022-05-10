@@ -1,0 +1,36 @@
+<%- include('layout.ejs'); %>
+<html>
+	<body>
+		<form ref='uploadForm' 
+			id='uploadForm' 
+			action='/uploadFile' 
+			method='post' 
+			encType="multipart/form-data">
+				<input type="file" name= "file" id="file" />
+				<button type="submit">Subir</button>
+		</form>		
+		<script>
+		const handleFileUpload = event => {
+		const files = event.target.files
+		const formData = new FormData()
+		formData.append('file', files[0])
+		fetch("/uploadFile", {
+		method: "POST",
+		body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+		console.log(data.path)
+		})
+		.catch(error => {
+		console.error(error)
+		})
+		}
+
+
+		document.querySelector("#fileUpload").addEventListener("change", event => {
+		handleFileUpload(event)
+		})
+		</script>
+	</body>
+</html>

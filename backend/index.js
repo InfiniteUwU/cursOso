@@ -7,6 +7,9 @@ dotenv.config();
 const passport = require("passport");
 const { loginCheck } = require("./auth/passport");
 loginCheck(passport);
+const fileupload = require("express-fileupload");
+
+
 
 // Mongo DB conncetion
 const database = process.env.MONGOLAB_URI;
@@ -28,9 +31,21 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.get('/ping', function(req, res) {
+  res.send('pong');
+});
+
+app.use(fileupload());
+
 //Routes
 app.use("/", require("./routes/login"));
 app.use("/", require("./routes/course"));
+app.use("/", require("./routes/uploadFile"));
+
+app.get('/', function (req, res) {
+  res.render('login.ejs');
+});
 
 const PORT = process.env.PORT || 3000;
 
