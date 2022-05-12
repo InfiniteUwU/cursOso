@@ -38,7 +38,6 @@ app.use(fileupload());
 //Routes
 app.use("/", require("./routes/login"));
 app.use("/", require("./routes/course"));
-app.use("/", require("./routes/uploadFile"));
 
 app.use(express.static('views'));
 
