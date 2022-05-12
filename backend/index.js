@@ -8,7 +8,8 @@ const passport = require("passport");
 const { loginCheck } = require("./auth/passport");
 loginCheck(passport);
 const fileupload = require("express-fileupload");
-
+const router = express.Router();
+const path = require('path');
 
 
 // Mongo DB conncetion
@@ -32,10 +33,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/ping', function(req, res) {
-  res.send('pong');
-});
-
 app.use(fileupload());
 
 //Routes
@@ -43,9 +40,26 @@ app.use("/", require("./routes/login"));
 app.use("/", require("./routes/course"));
 app.use("/", require("./routes/uploadFile"));
 
-app.get('/', function (req, res) {
-  res.render('login.ejs');
+app.use(express.static('views'));
+
+app.get('/', function(req, res) {
+  res.redirect('index.html');
 });
+
+app.get('/upload', function(req, res) {
+  res.render('upload.ejs');
+});
+
+app.post('/upload',(req,res) => {
+  let EDFile = req.files.file
+  EDFile.mv(`./files/${EDFile.name}`,err => {
+      if(err) return res.status(500).send({ message : err })
+
+      return res.status(200).send({ message : 'File upload' })
+  })
+})
+
+
 
 const PORT = process.env.PORT || 3000;
 
