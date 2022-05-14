@@ -1,4 +1,3 @@
-
 //For Register Page
 const registerView = (req, res) => {
     res.render("register", {});
@@ -7,7 +6,7 @@ const registerView = (req, res) => {
   //Post Request for Register
   
   const registerUser = (req, res) => {
-    const { name, email, location, password, confirm } = req.body;
+    const { name, email, teacher, password, confirm } = req.body;
   
     if (!name || !email || !password || !confirm) {
       console.log("Fill empty fields");
@@ -33,7 +32,7 @@ const registerView = (req, res) => {
           const newUser = new User({
             name,
             email,
-            location,
+            teacher,
             password,
           });
           //Password Hashing
@@ -53,6 +52,26 @@ const registerView = (req, res) => {
     }
   };
   
+  const deleteUser = (req, res) => {
+    const {email} = req.body;
+    User.findOne({ email: email }).then((user) => {
+      if (user) {
+        console.log("email exists");
+        User.remove({ email }, (err, results) => {
+        // if error found
+        if(err){
+            console.log(`no se pueden eliminar el usuario con el nombre ${email}`);
+            process.exit(1);
+        }
+        // success
+        console.log(`usuario ${email} eliminado`);
+        process.exit(0);
+      });
+    }
+  })
+};
+
+
   // For View
   const loginView = (req, res) => {
     res.render("login", {});
@@ -84,4 +103,5 @@ const registerView = (req, res) => {
     loginView,
     registerUser,
     loginUser,
+    deleteUser,
   };

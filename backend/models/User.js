@@ -14,9 +14,9 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  location: {   
-     type: String,    
-     default: "Cordoba", 
+  teacher: {   
+     type: Boolean,    
+     default: false, 
       },
   date: {
     type: Date,

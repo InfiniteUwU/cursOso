@@ -40,6 +40,25 @@ const createCourse = (req, res) => {
   });
 };
 
+const deleteCourse = (req, res) => {
+  const {name} = req.body;
+  Course.findOne({ name: name }).then((course) => {
+    if (course) {
+      console.log("course exists");
+      Course.remove({ name }, (err, results) => {
+      // if error found
+      if(err){
+          console.log(`no se pueden eliminar el usuario con el nombre ${name}`);
+          process.exit(1);
+      }
+      // success
+      console.log(`course ${name} eliminado`);
+      process.exit(0);
+    });
+  }
+})
+};
+
 // For View
 const courseView = (req, res) => {
   res.render("course", {});
