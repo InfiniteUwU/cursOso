@@ -1,5 +1,7 @@
 
 const Course = require("../models/Course");
+const User = require("../models/User");
+
 
 //For Course Creation Page
 const courseCreateView = (req, res) => {
@@ -9,7 +11,7 @@ const courseCreateView = (req, res) => {
 //Post Request
 
 const createCourse = (req, res) => {
-  const { name, teacher, description, cost } = req.body;
+  const { name, teacher, description, cost, alumno } = req.body;
 
   if (!name || !teacher || !description || !cost ) {
     console.log("Fill empty fields");
@@ -23,6 +25,7 @@ const createCourse = (req, res) => {
           teacher,
           description,
           cost,
+          alumno,
         });
       } else {
         //Validation
@@ -31,6 +34,7 @@ const createCourse = (req, res) => {
           teacher,
           description,
           cost,
+          alumno,
         });
         newCourse
               .save()
@@ -59,6 +63,15 @@ const deleteCourse = (req, res) => {
 })
 };
 
+const addStudenttoCourse = (req, res) => {
+  const { name , email } = req.body;
+  Course.findOne({ name: name }).then((course) => {
+    User.findOne({ email: email }).then((user) => {
+      Course.insertMany(User) ;
+    });
+  });
+};
+
 // For View
 const courseView = (req, res) => {
   res.render("course", {});
@@ -68,4 +81,6 @@ module.exports = {
   courseCreateView,
   createCourse,
   courseView,
+  deleteCourse,
+  addStudenttoCourse,
 };

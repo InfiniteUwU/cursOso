@@ -7,6 +7,7 @@ dotenv.config();
 const passport = require("passport");
 const { loginCheck } = require("./auth/passport");
 loginCheck(passport);
+const Course = require("./models/Course");
 const fileupload = require("express-fileupload");
 const router = express.Router();
 const path = require('path');
@@ -44,6 +45,16 @@ app.use(express.static('views'));
 app.get('/', function(req, res) {
   res.redirect('index.html');
 });
+
+app.get("/cursos", function (req, res) {
+  var cursor = Course.find();
+
+  for (let step = 0; step < Course.count(); step++) {  
+    console.log(Course.name);
+  }
+
+});
+
 
 app.get('/upload', function(req, res) {
   res.render('upload.ejs');

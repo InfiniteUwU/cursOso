@@ -5,6 +5,7 @@ const {
   createCourse,
   courseView,
   deleteCourse,
+  addStudenttoCourse,
 } = require("../controllers/CourseController");
 const { dashboardView } = require("../controllers/dashboardController");
 const { protectRoute } = require("../auth/protect");

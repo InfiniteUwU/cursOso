@@ -1,3 +1,7 @@
+const passport = require("passport");
+const User = require("../models/User");
+const bcrypt = require("bcryptjs");
+
 //For Register Page
 const registerView = (req, res) => {
     res.render("register", {});
