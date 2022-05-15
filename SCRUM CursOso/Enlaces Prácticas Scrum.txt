@@ -1,0 +1,27 @@
+En los siguientes enlaces se puede acceder tanto al espacio de trabajo, como a todos 
+los sprints de las prácticas del proyecto CursOso. Se incluyen los enlaces a los sprints 
+de las dos primeras prácticas, práctica 1 y práctica 2 y los nuevos enlaces de las dos 
+últimas prácticas de la asignatura, práctica 3 y práctica 4.
+
+ESPACIO DE TRABAJO DE TRELLO: https://trello.com/gestioncursosuco
+
+PRÁCTICA 1:
+SPRINT PRÁCTICA 1: https://trello.com/b/PkO35J2S/pr%C3%A1ctica-1
+
+PRÁCTICA 2:
+PRIMER SPRINT PRÁCTICA 2: https://trello.com/b/bJ7NpSxM/pr%C3%A1ctica-21
+SEGUNDO SPRINT PRÁCTICA 2: https://trello.com/b/QyK9Cqlz/pr%C3%A1ctica-22
+
+PRÁCTICA 3:
+PRIMER SPRINT PRÁCTICA 3: https://trello.com/b/ce0x1q55/pr%C3%A1ctica-31
+SEGUNDO SPRINT PRÁCTICA 3: https://trello.com/b/hfHYJkqq/pr%C3%A1ctica-32
+TERCER SPRINT PRÁCTICA 3: https://trello.com/b/EGc6JqGR/pr%C3%A1ctica-33
+
+PRÁCTICA 4:
+PRIMER SPRINT PRÁCTICA 4: https://trello.com/b/O8AeYDzX/pr%C3%A1ctica-41
+SEGUNDO SPRINT PRÁCTICA 4: https://trello.com/b/gY1TKiXb/pr%C3%A1ctica-42
+
+Integrantes: Jesús Pérez Torres, Diego Tabas Costa, Javier Romero Ramos, Ángel 
+Barbero Mellado, Jose Miguel Gómez Castro. 
+
+Título del proyecto: Gestión de cursos ofertados para el alumnado de la UCO.
