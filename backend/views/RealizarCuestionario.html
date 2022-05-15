@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <title>Cuestionario</title>
+</head>
+<body>
+        <div id="header" class="header">
+            <h1>Cuestionario de Historia</h1> 
+            <input id="boton" class="boton" type="button" value="Comenzar test" onclick="start();">
+        </div>
+    
+        <form id="test" name="test">         
+            <label for="preguno">1. ¿Cuando empezo la Segunda Guerra Mundial?</label>        
+            <input type="text" class="textbox" name="preguno" >
+            <br>
+            <label for="pregudos">2. ¿Quien reinaba en España en el año 1904?</label>
+            <br>
+            <input type="radio" name="pregudos" value="Alfonso XII"> Alfonso XII
+            <input type="radio" name="pregudos" value="Isabel II"> Isabel II
+            <br>
+            <label for="pregutres">3. ¿Cuando empezo la Guerra Civil Española?</label>
+            <br>
+            <input type="radio" name="pregutres" value="18/07/1936"> 18/07/1936
+            <input type="radio" name="pregutres" value="21/11/1936"> 21/11/1936
+            <br>
+            <label for="pregucuatro">4. ¿Que pasó el 7 de diciembre de 1941 en plena WWII?</label>
+            <br>
+            <input type="radio" name="pregucuatro" value="Fue el ataque a la base de Pearl Harbor"> Fue el ataque a la base de Pearl Harbor
+            <input type="radio" name="pregucuatro" value="Estallo una bomba nuclear en Hiroshima"> Estallo una bomba nuclear en Hiroshima
+            <br>
+            <label for="pregucinco">5. ¿Quien era Vladimir Lenin?</label>
+            <br>
+            <input type="radio" name="pregucinco" value="Precursor de la revolución rusa de 1917"> Precursor de la revolución rusa de 1917
+            <input type="radio" name="pregucinco" value="Piloto de la Royal Army de Reino Unido"> Piloto de la Royal Army de Reino Unido
+            <br>
+            <input id="btn" class="boton" type="button" value="Ver resultados" onclick = "check();">
+        </form>  
+   
+        <div id="luego_cargar">
+            <p id="mensaje"></p>
+            <p id="numero_correcto"></p>
+            <img id="imagenes"> 
+            <br>     
+            <input class="regresar" type="button" value="Hazlo de nuevo" onclick="document.location.reload();">
+        </div>
+        
+        <script src="../controllers/mainCuestionario.js"></script>
+</body>
+</html>

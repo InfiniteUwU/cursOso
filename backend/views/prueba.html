@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir curso</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body onload="mostrarCursos()">
+   
+<div class="master">
+    <div class="contenedor">
+        <div class="contenedor" id="cabecero">
+            <h1>Cursos Disponibles</h1>
+        </div>
+        <div class="elemento">
+            <ul id="personas">
+                <!-- <li>nuevos cursos</li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="contenedor2">
+            <div class="contenedor" id="cabecero">
+                <h1>Agregar Curso </h1>
+            </div>
+        <form id="forma">
+            <b>Nombre del curso:</b>
+            <input type="text" id="nombre" placeholder="Escribe aquí" required><br>
+            <b>Profesor:</b>
+            <input type="text" id="profesor" placeholder="Escribe aquí" required><br>
+            <b>Duracion del curso:</b>
+            <input type="text" id="duracion" placeholder="Escribe aquí " required><br>
+            <b>Contenidos del curso:</b>
+            <input type="text" id="contenidos" placeholder="Escribe aquí" required><br>
+            <b>Fecha de inicio:</b>
+            <input type="date" id="fecha" placeholder="Escribe aquí" required><br>
+            <b>Precio del curso:</b>
+            <input type="number" id="coste" placeholder="Escribe aquí" required>
+        </form>
+        <div style="text-align: center;">
+            <button style="cursor: pointer;" onclick="agregarCurso()">Añadir Curso</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="../controllers/cursos.js"></script>
+<script src="../controllers/app.js"></script>
+</body>
+</html>
