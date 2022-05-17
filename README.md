@@ -24,5 +24,5 @@ https://cursoso.herokuapp.com/crearcuestionario.html : página para la creación
 https://cursoso.herokuapp.com/RealizarCuestionario.html : página para la realización de cuestionarios.
 https://cursoso.herokuapp.com/Curso.html : página con un curso.
 
-
-Se recomienda mirar los archivos del backend para ver que funcionaliad está realizada pues el encargado del Frontend, por falta de tiempo, no ha podido añadir todo a la página ni enlazarla correctamente. Por otro lado no hay páginas para las funciones de eliminar usuarios o cursos, pese a estar estas funcionalidades también implementadas.
+SI SE QUIEREN PROBAR LAS FUNCIONALIDADES:
+El problema de la aplicación ha sido que hemos intentado trabajar en paralelo en varias fases del desarrollo siguiendo Scrum, pero a la hora de intentar unir las partes de cada uno, no ha dado tiempo, y no ha salido bien. He añadido la aplicación de pruebas a heroku, para que se puedan probar todas las funcionalidades que se esperaban de la app. Seguir este enlace: https://pruebaiwapp.herokuapp.com/
